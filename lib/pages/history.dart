@@ -19,6 +19,8 @@ class _HistoryPageState extends State<HistoryPage> {
     loadSavedArticles();
   }
 
+  
+
   void loadSavedArticles() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
