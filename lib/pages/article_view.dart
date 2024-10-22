@@ -1,44 +1,54 @@
 import 'package:flutter/material.dart';
-
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleView extends StatefulWidget {
-String blogUrl;
-ArticleView({super.key, required this.blogUrl});
+  final String blogUrl;
+  const ArticleView({super.key, required this.blogUrl});
 
   @override
   State<ArticleView> createState() => _ArticleViewState();
 }
 
 class _ArticleViewState extends State<ArticleView> {
+  /*final controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..setNavigationDelegate(
+      NavigationDelegate(
+        onProgress: (int progress) {
+          // Update loading bar.
+        },
+        onPageStarted: (String url) {},
+        onPageFinished: (String url) {},
+        onHttpError: (HttpResponseError error) {},
+        onWebResourceError: (WebResourceError error) {},
+        onNavigationRequest: (NavigationRequest request) {
+          if (request.url.startsWith('https://www.youtube.com/')) {
+            return NavigationDecision.prevent;
+          }
+          return NavigationDecision.navigate;
+        },
+      ),
+    )
+    ..loadRequest(Uri.parse('https://flutter.dev'));*/
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Flutter"),
+            Text("Flutter "),
             Text(
               "News",
               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
             )
           ],
         ),
-        centerTitle: true,
         elevation: 0.0,
       ),
-      body: Container(
-      child: WebView(
-        initialUrl:widget.blogUrl ,
-        javascriptMode: JavascriptMode.unrestricted,
+      body: WebViewWidget(
+        controller: WebViewController()..loadRequest(Uri.parse(widget.blogUrl)),
       ),
-    ));
+    );
   }
-}
-
-class JavascriptMode {
-  static var unrestricted;
-}
-
-WebView({required String initialUrl, required javascriptMode}) {
 }

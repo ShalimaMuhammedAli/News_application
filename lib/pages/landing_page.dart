@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/pages/home.dart';
+import 'package:newsapplication/pages/home.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -18,7 +18,7 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             Material(
               elevation: 3.0,
-                borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child: Image.asset(
@@ -34,27 +34,21 @@ class _LandingPageState extends State<LandingPage> {
             ),
             Text(
               "News from around the\n        world for you",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 26.0,
-                  fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.black, fontSize: 26.0, fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 20.0,
             ),
             Text(
               "Best time to read, take your time to read a little more of this world",
-              style: TextStyle(
-                  color: Colors.black45,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.w500),
+              style: TextStyle(color: Colors.black45, fontSize: 18.0, fontWeight: FontWeight.w500),
             ),
             SizedBox(
               height: 40.0,
             ),
             GestureDetector(
-              onTap: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home()));
+              onTap: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
               },
               child: SizedBox(
                 width: MediaQuery.of(context).size.width / 1.2,
@@ -63,16 +57,11 @@ class _LandingPageState extends State<LandingPage> {
                   elevation: 5.0,
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 15.0),
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(30)),
+                    decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(30)),
                     child: Center(
                       child: Text(
                         "Get Started",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.w500),
+                        style: TextStyle(color: Colors.white, fontSize: 17.0, fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),

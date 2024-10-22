@@ -1,4 +1,4 @@
-import 'package:newsapp/models/category_model.dart';
+import 'package:newsapplication/models/category_model.dart';
 
 List<CategoryModel> getCategories() {
   List<CategoryModel> category = [];
@@ -26,6 +26,16 @@ List<CategoryModel> getCategories() {
 
   categoryModel.categoryName = "Sports";
   categoryModel.image = "images/sport.jpg";
+  category.add(categoryModel);
+  categoryModel = CategoryModel();
+
+  categoryModel.categoryName = "Politics";
+  categoryModel.image = "images/politics.jpg";
+  category.add(categoryModel);
+  categoryModel = CategoryModel();
+
+  categoryModel.categoryName = "Technology";
+  categoryModel.image = "images/tech.jpg";
   category.add(categoryModel);
   categoryModel = CategoryModel();
 

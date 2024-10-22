@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:newsapp/models/show_category.dart';
-import 'package:newsapp/pages/article_view.dart';
-import 'package:newsapp/services/show_category_news.dart';
+import 'package:newsapplication/models/show_category.dart';
+import 'package:newsapplication/pages/article_view.dart';
+import 'package:newsapplication/services/show_category_news.dart';
 
 class CategoryNews extends StatefulWidget {
   String name;
@@ -50,11 +50,10 @@ class _CategoryNewsState extends State<CategoryNews> {
               itemCount: categories.length,
               itemBuilder: (context, index) {
                 return ShowCategory(
-                  Image: categories[index].urlToImage!,
-                  desc: categories[index].description!,
-                  title: categories[index].title!,
-                  url: categories[index].url!
-                );
+                    Image: categories[index].urlToImage!,
+                    desc: categories[index].description!,
+                    title: categories[index].title!,
+                    url: categories[index].url!);
               }),
         ));
   }
@@ -62,13 +61,19 @@ class _CategoryNewsState extends State<CategoryNews> {
 
 class ShowCategory extends StatelessWidget {
   String Image, desc, title, url;
-  ShowCategory({super.key, required this.Image, required this.desc, required this.title, required this.url});
+  ShowCategory(
+      {super.key,
+      required this.Image,
+      required this.desc,
+      required this.title,
+      required this.url});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=> ArticleView(blogUrl: url)));
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ArticleView(blogUrl: url)));
       },
       child: Container(
         child: Column(
@@ -93,8 +98,13 @@ class ShowCategory extends StatelessWidget {
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold),
             ),
-            Text(desc, maxLines: 3,),
-            SizedBox(height: 20.0,),
+            Text(
+              desc,
+              maxLines: 3,
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
           ],
         ),
       ),
