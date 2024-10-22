@@ -3,6 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.dart';
 
+
+
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
 
@@ -19,7 +21,7 @@ class _HistoryPageState extends State<HistoryPage> {
     loadSavedArticles();
   }
 
-  
+
 
   void loadSavedArticles() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
