@@ -63,6 +63,7 @@ class _AllNewsState extends State<AllNews> {
   }
 }
 
+
 class AllNewsSection extends StatelessWidget {
   String image, desc, title, url, news;
   AllNewsSection({super.key, required this.image, required this.desc, required this.title, required this.url, required this.news});
